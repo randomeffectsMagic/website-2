@@ -1,346 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Random Effects Entertainment</title>
-<style>
-  body {
-    background-color: black;
-    color: white;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Matthew Graham - Magician performing over 30 years, official Boston Red Sox magician. Book Random Effects Entertainment for your event." />
+  <meta name="keywords" content="magician, magic, Boston Red Sox magician, Matthew Graham, event entertainment, close-up magic, stage performances" />
+  <meta name="author" content="Matthew Graham" />
+  <title>Random Effects Entertainment</title>
 
-  /* Floating background sparkles */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-image: radial-gradient(white 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: moveStars 20s linear infinite;
-    opacity: 0.15;
-    z-index: -2;
-  }
-  @keyframes moveStars {
-    from { background-position: 0 0; }
-    to { background-position: 100px 100px; }
-  }
+  <!-- Google Fonts: Dancing Script for cursive header -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
 
-  header {
-    text-align: center;
-    padding: 60px 20px;
-    font-size: 3em;
-    font-weight: bold;
-    color: red;
-    letter-spacing: 3px;
-    position: relative;
-    animation: glow 2s ease-in-out infinite alternate;
-    overflow: hidden;
-  }
-  @keyframes glow {
-    from { text-shadow: 0 0 10px red, 0 0 20px red; }
-    to { text-shadow: 0 0 20px red, 0 0 40px red; }
-  }
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-  /* Sparkles over header */
-  .sparkle-container {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: -1;
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Matthew Graham",
+    "jobTitle": "Magician",
+    "url": "https://randomeffects.com",
+    "sameAs": [
+      "https://instagram.com/Fenway_magic"
+    ],
+    "description": "Matthew Graham is a professional magician performing for over 30 years, including as the official magician for the Boston Red Sox."
   }
-  .sparkle {
-    position: absolute;
-    width: 4px; height: 4px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0;
-    animation: twinkle 3s infinite;
-  }
-  @keyframes twinkle {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
-  }
-  .sparkle:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
-  .sparkle:nth-child(2) { top: 30%; left: 70%; animation-delay: 0.5s; }
-  .sparkle:nth-child(3) { top: 50%; left: 40%; animation-delay: 1s; }
-  .sparkle:nth-child(4) { top: 70%; left: 80%; animation-delay: 1.5s; }
-  .sparkle:nth-child(5) { top: 20%; left: 50%; animation-delay: 2s; }
+  </script>
 
-  .content {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-    font-size: 1.3em;
-  }
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
 
-  /* Section fade-in */
-  section {
-    margin-top: 50px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease-out;
-  }
-  section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 3em;
+      font-weight: bold;
+      color: red;
+      letter-spacing: 3px;
+      position: relative;
+      animation: glow 2s ease-in-out infinite alternate;
+      overflow: hidden;
+      font-family: 'Dancing Script', cursive;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px red, 0 0 20px red; }
+      to { text-shadow: 0 0 20px red, 0 0 40px red; }
+    }
 
-  h2 {
-    color: red;
-    text-shadow: 0 0 10px red;
-  }
+    /* Floating background sparkles */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: radial-gradient(white 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: moveStars 20s linear infinite;
+      opacity: 0.15;
+      z-index: -2;
+    }
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: 100px 100px; }
+    }
 
-  /* Magic wand divider */
-  .divider {
-    margin: 40px auto;
-    height: 6px;
-    width: 200px;
-    background: linear-gradient(to right, gold, red, gold);
-    border-radius: 3px;
-    position: relative;
-    overflow: hidden;
-  }
-  .divider::after {
-    content: "";
-    position: absolute;
-    top: 0; left: -50px;
-    width: 50px; height: 6px;
-    background: white;
-    box-shadow: 0 0 10px white;
-    animation: sparkleLine 2s linear infinite;
-  }
-  @keyframes sparkleLine {
-    from { left: -50px; }
-    to { left: 200px; }
-  }
+    /* Sparkles over header */
+    .sparkle-container {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .sparkle {
+      position: absolute;
+      width: 4px; height: 4px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle 3s infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+    .sparkle:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 30%; left: 70%; animation-delay: 0.5s; }
+    .sparkle:nth-child(3) { top: 50%; left: 40%; animation-delay: 1s; }
+    .sparkle:nth-child(4) { top: 70%; left: 80%; animation-delay: 1.5s; }
+    .sparkle:nth-child(5) { top: 20%; left: 50%; animation-delay: 2s; }
 
-  /* Photos styles */
+    .content {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.3em;
+    }
 
-  .photos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 30px;
-  }
-  /* Large hero image - Matthew1.jpg */
-  .photo-large {
-    width: 320px;
-    border-radius: 40px 40px 0 0;
-    box-shadow: 0 0 25px red;
-    transition: transform 0.3s ease;
-  }
-  .photo-large:hover {
-    transform: scale(1.05);
-  }
+    /* Section fade-in */
+    section {
+      margin-top: 50px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-  /* Circle mask for Matthew2.jpg */
-  .photo-circle {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 20px red;
-    transform: rotate(-7deg);
-    transition: transform 0.3s ease;
-  }
-  .photo-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .photo-circle:hover {
-    transform: rotate(0deg) scale(1.05);
-  }
+    h2 {
+      color: red;
+      text-shadow: 0 0 10px red;
+    }
 
-  /* Polaroid style for Matthew3.jpg */
-  .photo-polaroid {
-    width: 180px;
-    padding: 15px 15px 40px;
-    background: #111;
-    border: 6px solid white;
-    border-radius: 12px;
-    box-shadow: 0 0 30px red;
-    position: relative;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-  }
-  .photo-polaroid img {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
-  }
-  .photo-polaroid:hover {
-    box-shadow: 0 0 50px red;
-    transform: scale(1.05);
-  }
-  .photo-polaroid::after {
-    content: "Magic Moment";
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Arial Black', Arial, sans-serif;
-    font-size: 1em;
-    color: red;
-    letter-spacing: 1.5px;
-  }
+    /* Magic wand divider */
+    .divider {
+      margin: 40px auto;
+      height: 6px;
+      width: 200px;
+      background: linear-gradient(to right, gold, red, gold);
+      border-radius: 3px;
+      position: relative;
+      overflow: hidden;
+    }
+    .divider::after {
+      content: "";
+      position: absolute;
+      top: 0; left: -50px;
+      width: 50px; height: 6px;
+      background: white;
+      box-shadow: 0 0 10px white;
+      animation: sparkleLine 2s linear infinite;
+    }
+    @keyframes sparkleLine {
+      from { left: -50px; }
+      to { left: 200px; }
+    }
 
-  /* New photo-tilted style for 4th picture */
-  .photo-tilted {
-    width: 230px;
-    border: 4px solid #ff0000cc;
-    border-radius: 20px;
-    box-shadow: 0 0 25px red;
-    transform: rotate(5deg);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-  }
-  .photo-tilted img {
-    width: 100%;
-    display: block;
-    border-radius: 16px;
-  }
-  .photo-tilted:hover {
-    transform: rotate(0deg) scale(1.05);
-    box-shadow: 0 0 40px #ff0000dd;
-  }
+    /* Photos styles */
+    .photos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .photo-large {
+      width: 320px;
+      border-radius: 40px 40px 0 0;
+      box-shadow: 0 0 25px red;
+      transition: transform 0.3s ease;
+    }
+    .photo-large:hover {
+      transform: scale(1.05);
+    }
+    .photo-circle {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 20px red;
+      transform: rotate(-7deg);
+      transition: transform 0.3s ease;
+    }
+    .photo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .photo-circle:hover {
+      transform: rotate(0deg) scale(1.05);
+    }
+    .photo-polaroid {
+      width: 180px;
+      padding: 15px 15px 40px;
+      background: #111;
+      border: 6px solid white;
+      border-radius: 12px;
+      box-shadow: 0 0 30px red;
+      position: relative;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .photo-polaroid img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+    .photo-polaroid:hover {
+      box-shadow: 0 0 50px red;
+      transform: scale(1.05);
+    }
+    .photo-polaroid::after {
+      content: "Magic Moment";
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Arial Black', Arial, sans-serif;
+      font-size: 1em;
+      color: red;
+      letter-spacing: 1.5px;
+    }
 
-  /* Contact section */
-  .contact {
-    margin-top: 40px;
-    font-size: 1.5em;
-    color: red;
-  }
-  .contact a {
-    color: red;
-    text-decoration: none;
-  }
-  .book-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    background: red;
-    color: white;
-    font-size: 1.2em;
-    border-radius: 8px;
-    text-decoration: none;
-    box-shadow: 0 0 10px red;
-    transition: all 0.3s ease;
-  }
-  .book-btn:hover {
-    background: white;
-    color: red;
-    box-shadow: 0 0 25px white;
-    cursor: pointer;
-  }
+    /* Updated .photo-tilted to be 2x bigger */
+    .photo-tilted {
+      width: 460px;  /* doubled from 230px */
+      border: 4px solid #ff0000cc;
+      border-radius: 20px;
+      box-shadow: 0 0 25px red;
+      transform: rotate(5deg);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      align-self: flex-start;
+    }
+    .photo-tilted img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      object-fit: contain;
+    }
+    .photo-tilted:hover {
+      transform: rotate(0deg) scale(1.05);
+      box-shadow: 0 0 40px #ff0000dd;
+    }
 
-  blockquote {
-    font-style: italic;
-    border-left: 3px solid red;
-    padding-left: 15px;
-    margin: 20px auto;
-    max-width: 700px;
-  }
-</style>
+    /* Contact section */
+    .contact {
+      margin-top: 40px;
+      font-size: 1.5em;
+      color: red;
+    }
+    .contact a {
+      color: red;
+      text-decoration: none;
+    }
+    .book-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      background: red;
+      color: white;
+      font-size: 1.2em;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 10px red;
+      transition: all 0.3s ease;
+    }
+    .book-btn:hover {
+      background: white;
+      color: red;
+      box-shadow: 0 0 25px white;
+      cursor: pointer;
+    }
+
+    blockquote {
+      font-style: italic;
+      border-left: 3px solid red;
+      padding-left: 15px;
+      margin: 20px auto;
+      max-width: 700px;
+      color: white;
+    }
+
+    /* Testimonials carousel */
+    .testimonial-slider {
+      position: relative;
+      max-width: 700px;
+      margin: auto;
+      min-height: 90px;
+    }
+    .testimonial-slider blockquote {
+      display: none;
+      font-style: italic;
+      border-left: 3px solid red;
+      padding-left: 15px;
+      color: white;
+      font-size: 1.2em;
+      margin: 0;
+      line-height: 1.4em;
+    }
+    .testimonial-slider blockquote.active {
+      display: block;
+    }
+
+    /* Instagram icon inline SVG styling */
+    .instagram-link svg {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      fill: red;
+      margin-right: 8px;
+      transition: fill 0.3s ease;
+    }
+    .instagram-link:hover svg {
+      fill: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        font-size: 2rem;
+        padding: 1rem;
+      }
+      .photos {
+        flex-direction: column;
+        align-items: center;
+      }
+      .photos img {
+        width: 80% !important;
+      }
+      .photo-tilted {
+        width: 90vw; /* scale to viewport on small screens */
+        transform: rotate(0deg);
+        box-shadow: 0 0 40px #ff0000dd;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header role="banner">
+    Random Effects Entertainment
+    <div class="sparkle-container" aria-hidden="true">
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+    </div>
+  </header>
 
-<header>
-  Random Effects Entertainment
-  <div class="sparkle-container">
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-  </div>
-</header>
+  <main role="main" class="content">
+    <p>Performing for over <strong>30 years</strong> of unforgettable magic and entertainment.</p>
+    <p>Official Magician for the <strong>Boston Red Sox</strong> for 25 years.</p>
 
-<div class="content">
-  <p>Performing for over <strong>30 years</strong> of unforgettable magic and entertainment.</p>
-  <p>Official Magician for the <strong>Boston Red Sox</strong> for 25 years.</p>
+    <div class="divider"></div>
 
-  <div class="divider"></div>
+    <section id="about">
+      <h2>About Matthew</h2>
+      <div style="display:flex; justify-content:center; gap: 20px; flex-wrap: wrap; align-items:center;">
+        <p style="max-width: 500px; text-align:left;">
+          Matthew Graham, known for his incredible sleight-of-hand, engaging personality, and ability to entertain all ages, has amazed audiences across the country. Whether performing on stage, at private events, or as the long-time magician for the Boston Red Sox, Matthew brings magic to life in unforgettable ways.
+        </p>
+        <img src="Matthew1.jpg" alt="Matthew performing" class="photo-circle" loading="lazy" />
+      </div>
+    </section>
 
-  <section id="about">
-    <h2>About Matthew</h2>
-    <div style="display:flex; justify-content:center; gap: 20px; flex-wrap: wrap; align-items:center;">
-      <p style="max-width: 500px; text-align:left;">
-        Matthew Graham, known for his incredible sleight-of-hand, engaging personality, and ability to entertain all ages, has amazed audiences across the country. Whether performing on stage, at private events, or as the long-time magician for the Boston Red Sox, Matthew brings magic to life in unforgettable ways.
+    <div class="divider"></div>
+
+    <section id="services">
+      <h2>Magic Services</h2>
+      <div style="display:flex; justify-content:center; gap: 20px; flex-wrap: wrap; align-items:center;">
+        <img src="Matthew3.jpg" alt="Magic moment" class="photo-polaroid" loading="lazy" />
+        <ul style="list-style: none; padding: 0; max-width: 450px; text-align: left; font-size: 1.3em;">
+          <li>🎩 Close-up Magic</li>
+          <li>🎭 Stage Performances</li>
+          <li>🏟 Sports & Corporate Events</li>
+          <li>🎉 Private Parties & Weddings</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="quotes" aria-label="Testimonials">
+      <h2>What People Are Saying</h2>
+      <div class="testimonial-slider">
+        <blockquote class="active">"Absolutely incredible — the best magician we’ve ever seen!"</blockquote>
+        <blockquote>"Matthew’s magic left the entire room speechless. A true entertainer."</blockquote>
+        <blockquote>"The magic and showmanship are unforgettable."</blockquote>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="photos" aria-label="Photo gallery">
+        <img src="Matthew2.jpg" alt="Magic performance" class="photo-large" loading="lazy" />
+        <img src="Matthew4.jpg" alt="Another magic moment" class="photo-tilted" loading="lazy" />
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="contact" aria-label="Contact">
+      <h2>Contact</h2>
+      <div class="contact">
+        📞 Call Now: <strong>(617) 312-4091</strong><br />
+        📧 Email: <a href="/cdn-cgi/l/email-protection#93fef2e7e7fbf6e4d3e1f2fdf7fcfef6f5f5f6f0e7e0bdf0fcfe" aria-label="Email Matthew Graham">[email protected]</a>
+      </div>
+      <p>
+        Follow on Instagram: 
+        <a href="https://instagram.com/Fenway_magic" target="_blank" rel="noopener noreferrer" aria-label="Instagram Fenway_magic" class="instagram-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.25-.88a1.13 1.13 0 11-2.26 0 1.13 1.13 0 012.26 0z"/></svg>
+          @Fenway_magic
+        </a>
       </p>
-      <img src="Matthew1.jpg" alt="Matthew performing" class="photo-circle" />
-    </div>
-  </section>
+      <a href="/cdn-cgi/l/email-protection#214c4055554944566153404f454e4c444747444255520f424e4c" class="book-btn">Book Now</a>
+    </section>
+  </main>
 
-  <div class="divider"></div>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 
-  <section id="services">
-    <h2>Magic Services</h2>
-    <div style="display:flex; justify-content:center; gap: 20px; flex-wrap: wrap; align-items:center;">
-      <img src="Matthew3.jpg" alt="Magic moment" class="photo-polaroid" />
-      <ul style="list-style: none; padding: 0; max-width: 450px; text-align: left; font-size: 1.3em;">
-        <li>🎩 Close-up Magic</li>
-        <li>🎭 Stage Performances</li>
-        <li>🏟 Sports & Corporate Events</li>
-        <li>🎉 Private Parties & Weddings</li>
-      </ul>
-    </div>
-  </section>
+  <script>
+    // Fade-in sections on scroll
+    const sections = document.querySelectorAll('section');
+    function revealOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
 
-  <div class="divider"></div>
-
-  <section id="quotes">
-    <h2>What People Are Saying</h2>
-    <blockquote>"Absolutely incredible — the best magician we’ve ever seen!"</blockquote>
-    <blockquote>"Matthew’s magic left the entire room speechless. A true entertainer."</blockquote>
-  </section>
-
-  <div class="divider"></div>
-
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div style="display:flex; justify-content:center; gap: 20px; flex-wrap: wrap; align-items:center; margin-top: 20px;">
-      <img src="Matthew2.jpg" alt="Magic performance" class="photo-large" />
-      <img src="Matthew4.jpg" alt="Another magic moment" class="photo-tilted" />
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact">
-      📞 Call Now: <strong>(617) 312-4091</strong><br />
-      📧 Email: <a href="mailto:matthew@randomeffects.com">matthew@randomeffects.com</a>
-    </div>
-    <a href="mailto:matthew@randomeffects.com" class="book-btn">Book Now</a>
-  </section>
-</div>
-
-<script>
-  // Fade-in sections on scroll
-  const sections = document.querySelectorAll('section');
-  function revealOnScroll() {
-    const triggerBottom = window.innerHeight * 0.85;
-    sections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top < triggerBottom) {
-        section.classList.add('visible');
-      }
-    });
-  }
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll();
-</script>
-
+    // Testimonials carousel
+    const testimonials = document.querySelectorAll('.testimonial-slider blockquote');
+    let currentTestimonial = 0;
+    setInterval(() => {
+      testimonials[currentTestimonial].classList.remove('active');
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      testimonials[currentTestimonial].classList.add('active');
+    }, 5000);
+  </script>
 </body>
 </html>
